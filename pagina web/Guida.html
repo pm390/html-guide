@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <!--commento-->
+    <meta charset='utf-8'></meta>
+
+    <title>GUIDA</title>
+    <link rel="icon" type="image/x-icon" href="./icons/icon.ico" />
+    <link rel="stylesheet" type="text/css" href="./CSS/style.css">
+</head>
+<body>
+<article >
+    <header  class="normalTitle">Cos'è una pagina web</header>
+    <section>
+        Una pagina web è un insieme di documenti di testo il primo tipo di documento che vedremo è il documento con estensione .html .<br>
+        Un documento html rappresenta gli elementi visibili nella pagina , una pagina web può essere composta da un solo documento .html in casi di singole pagine.
+        Nel caso di sito con diverse pagine si possono usare anche diversi documenti .html diversi.<br>
+        Per lavorare su una pagina web la prima cosa da fare è preparare una cartella in cui inserire i documenti che creeremo
+        e le varie risorse ( icone, immagini , video ), per riuscire facilmente ad accedere alle varie risorse è una buon pratica
+        ogni volta che si incontra un nuovo tipo di risorsa creare una sottocartella rispetto a dove si trova il file html a cui si lavorare.
+        <img src="./images/screen1.png"/>
+        Questa immagine mostra un esempio di come organizzare i file e le cartelle mostriamo dove è stata posizionta l'immagine mostrata qui sopra.
+        <br>
+    </section>
+    <section>
+        <header class="normalTitle" >Struttura di un documento html</header>
+            Un documento html può essere immaginato come un insieme di blocchi. Un esempio di blocco è un titolo , un altro per esempio è un immagine si può anche avere un artiocolo.
+            I blocchi possono essere composti in modi diversi si possono mettere blocchi uno dopo l'altro o pure uno dentro l'altro(per esempio all'interno di un articolo è possibile ).
+            Altri blocchi hanno solo lo scopo di raggruppare gruppi di elementi senza essere direttamente visibili ma sono comodi per organizzare gli altri elementi
+            e ci serviranno per abbellire e modificare l'apparenza grafica .
+            <br>
+            Esistono anche 3 blocchi che non possono essere inseriti più di una volta in un documento html. 
+            Ogni blocco viene rappresentato con 2 "tag" uno di apertura e uno di chiusura.
+            <br>
+            La sintassi di un blocco è la seguente:
+            <br>
+        <code>     &ltnome blocco&gt contenuto blocco &lt/nome blocco&gt</code>
+     </section> 
+</article>
+<header class="normalTitle" >Impostiamo il nostro primo progetto</header>
+<article>
+Creiamo una cartella sul desktop chiamata progetto 1.
+Apriamo Visual studio Code e selezioniamo file-> New File . Successivamente selezioniamo file-> Save as... selezioniamo la cartella progetto 1 
+scegliamo il nome del file (questo nome non dev'essere uguale al nome della pagina) quindi per esempio chiamiamolo home e 
+successivamente scegliamo dal menu a tendina HTML(dovrebbe essere la seconda opzione dall'alto) a questo punto salviamo.
+Per vedere se il salvataggio e la scela del formato sia andata correttamente guardiamo in alto a visual studio code nel centro dellasbarra superiore 
+dovrebbe apparire home.html come nome. A questo punto proviamo a scrivere &lt (minore) dovrebbero apparire una tendina con dei suggerimenti.
+Se non appare c'è qualcosa che non va e dovremo guardare sul momento che cosa succede.
+</article>
+<header class="normalTitle" >La base di un documento html </header>
+<article>
+Per prima cosa in un documento HTML nella prima riga è consigliato scrivere questa riga <code>&lt!DOCTYPE html&gt</code> a noi non interessa questa riga
+semplicemente avverte il browser su cui si sta aprendo il documento che il documento deve essere letto come html. Anche senza questa riga il 
+browser interpreta il contenuto come html ma esistendo tante versioni se manca questa riga ogni browser interpreta il documento in modo diverso
+con questa riga si avverte il browser che si sta lavorando con la versione 5 di html html.<br>
+Dopo questa riga inizia il vero e proprio documento. Per prima cosa vediamo i 3 blocchi che possono essere inseriti solo una volta e che rappresentano
+una divisione tra componenti della pagina.<br>
+Il primo blocco è <code>&lthtml&gt &lt/html&gt</code> questo rappresenta semplicemente un contenitore che contiene la pagina.
+<br>
+All'interno di questo vengono posizionati gli altri due blocchi principali <code>&lthead&gt &lt/head&gt</code> e <code>&ltbody&gt &lt/body&gt</code>    
+Il blocco head è usato per dare delle informazioni al browser e quasi tutti i blocchi definiti nel head non sono chiaramente visibili nella pagina.
+Le uniche cose direttamente visibili che si possono inserire nella pagina sono l'icona e il titolo della pagina.
+<br>
+Il blocco body contiene il vero e proprio contenuto della pagina. I componenti che si vedono nella finestra del browser.
+<br>
+A questo possiamo cominciare a lavorare su una pagina. Da adesso vedremo poco per volta i vari tag utili per costruire la base di una pagina.
+<br>
+Una volta compresi i tag e il loro utilizzo passeremo poi alla modifica della grafica della pagina.
+<br>
+Cancelliamo tutto ciò che magari abbiamo scritto su visual studio e scriviamo html dovrebbe apparire una tendina scegliamo la riga html:5 con le frecce e 
+schiacciando invio visual studio farà comparire uno scheletro di quello di cui abbiamo parlato. 
+Al suo interno notiamo delle cose nuove in html notiamo una scritta lang="en" questo è un attributo di un tag, alcuni tag possono avere attributi
+ma parlando dei vari blocchi parleremo dei vari attributi, altri invece li vedremo quando parleremo della parte più grafica.
+Avrete sicuramente presente quando andando su un sito in inglese il browser vi chiede se deve tradurre la pagina, il browser è in grado di consigliare
+queste traduzioni proprio grazie all'attributo lang del blocco html cofronta il tag lang con la lingua del vostro pc e se sono diverse propone la traduzione
+quindi se su un sito straniero non vi appare questo messaggio al 90% sono programmatori che hanno dimenticato la base della base , il browser è
+intelligente prova a correggere errori nostri per esempio se non chiudiamo un blocco prova a capire lui dove andava chiuso , ma non è perfetto, non può
+leggere il contenuto della pagina intera e capire in che lingua è la pagina.<br> Sostituiamo en con it.<br>
+Ora spostiamoci al blocco head al suo interno vediamo 3 blocchi differenti 2 blocchi di nome meta e un blocco title.
+I blocchi meta definiscono metadati della pagina (informazioni astratte) possiamo notare che questi blocchi meta sono aperti ma non sono chiusi,
+questo perchè rappresentando informazioni astratte non rappresentano un vero e proprio blocco , il browser interpreta i blocchi meta come se fossero subito chiusi
+(è sempre possibile chiudere i blocchi meta con &lt/meta&gt ma non essendo richiesto non li tocchiamo).
+Il primo blocco meta dice il charset cioè l'insieme di caratteri che il browser deve aspettarsi nella pagina. Se comparissero caratteri inattesi
+si verifica il fenomeno dei <a href="https://it.wikipedia.org/wiki/Mojibake"> mojibake</a><br>
+Il set UTF-8 permette di rappresentare praticamente tutti i caratteri comuni per quasi tutte le lingue. Più di così non andrei a fondo ma come curiosità 
+se si toglie quella riga in alcuni browser i caratteri accentati non vengono accettati e per inserli nel testo era necessario usare sequenze di caratteri 
+come & agrave(senza lo spazio) per inserire à.
+<br>
+Il secondo blocco meta non ci serve quindi lo cancelliamo.
+<br>
+Il blocco title come dice il nome rappresenta il titolo della pagina al posto della scritta Document si può scegliere qualsiasi titolo preferiamo.
+Alcuni caratteri non possono essere inseriti direttamente perchè hanno significato nella sintassi di html per esempio &lt , &gt per i quali è necessario
+usare delle sequenze di caratteri & lt per &lt,& gt per &gt anche in questo caso rimuovendo lo spazio tra & e la sequenza di lettere.
+Una cosa da notare è che queste sequenze spesso hanno un significato lt per esempio indica Less then quindi minore. Per la lista completa di caratteri
+per cui è necessaria una sequenza guardare questo <a href="https://www.whatsmyip.org/html-characters/">link .</a>
+Una linea guida è sempre provare ad inserire il carattere salvare aprire il documento html sul browser e vedere se il carattere è mostrato correttamente.
+<br>
+Ora abbiamo visto tutto ciò che visual studio code ha scritto per noi. Da adesso cominceremo a vedere i componenti che useremo nella composizione della pagina.
+</article>
+<header class="normalTitle" >Aggiungiamo un icona al nostro sito</header>
+<article>
+    L'icona del sito non fa parte del corpo della pagina è mostrata in alto nel tab del browser , da questo possiamo capire che il blocco che 
+    rappresenta l'icona della pagina vada inserito nel blocco head. Il blocco che ci permette di aggiungere un icona è &ltlink&gt.
+    Possiamo usare un qualsiasi file di immagine ma qui presento il metodo con un file .ico perchè e fra i formati
+    migliori per le icone di un sito o di un applicazione. Per convertire un png o molti altri formati di immagine in .ico si può fare su questo 
+    <a href="https://convertio.co/it/png-ico/">sito</a>
+    Un icona ha una risoluzione di massimo 64px x 64px  quindi non ha senso usare immagini complesse è importante avere un immagine che 
+    sia facile da ricordare, e sia significativa con l'argomento trattato nella pagina , un esempio magari un icona con un libro aperto
+    per una pagina di uno scrittore (è meglio evitare cose somiglianti a icone famose facebook/instagram etc.).
+    Chiamiamo l'icona icon.ico e creiamo una cartella icone dentro la nostra cartella progetto 1 , chiamiamola icone
+    e mettiamoci dentro icon.ico. 
+    <br>
+    Dopo il tag title chiuso( &lt/title&gt) con invio andiamo a capo e aggiungiamo una riga.<br>
+    <code>
+        &ltlink rel="icon" type="image/x-icon" href="./icone/icon.ico" &gt
+    </code>  
+    Guardiamo molto velocemente cosa rappresentano gli attributi di questo blocco rel="icon" avverte il browser di usare
+    il contenuto come icona, type="image/x-icon" avverte il browser che il formato dell'icona è .ico l'ultimo attributo
+    href="./icone/icon.ico" dice al browser dove trovare il file, ./ possiamo interpretarlo come "in questa cartella"
+    dove questa cartella indica la cartella in cui si trova il documento html il resto dice cosa dev'essere cercato
+    quindi icone/icon.ico un modo facile per leggere tutto in una sola volta è leggere tutto da destra a sinistra<br>
+    cerca icon.ico che è nella cartella icone che è in questa cartella.
+    <br>
+    Ora dovremo aver questo risultato su visual studio code.
+    <img src="./images/screen2.png"/>
+</article>
+<article>
+    <header class="bigTitle" >Il body e il suo contenuto</header>
+    <section>
+        <header class="normalTitle" >Definizioni che useremo</header>
+        Da questo punto in poi chiameremo tag di apertura un elemento della forma &ltnome &gt e chiameremo tag di chiusura 
+        &lt/nome &gt chiameremo contenuto di un tag qualsiasi elemento che si trova tra il &gt di un tag di apertura
+        e il &lt del corrispondente tag di chiusura. Chiameremo inoltre attributo ogni elemento del tipo
+        nome-elemento="valore" all'interno di un tag di apertura.
+        <br>
+        <img src="./images/screen3.png" alt="foto esempio non trovata"/>
+        <br>
+        Proviamo ad analizzare questo pezzo di html per capire queste definizioni, ignoriamo per ora il significato di questi
+        tag. Vediamo che il blocco inizia con un tag di apertura  e di chiusura di un blocco article , gli altri blocchi
+        che sono tra questi due tag sono quindi contenuto del tag article , il tag header subito dopo ha come contenuto solo del testo,
+        però possiamo notare che nel tag di apertura abbiamo un attributo, l'attributo class con valore bigTitle.
+        Quando parleremo dell'aspetto grafico parleremo dell'attributo class e di un suo simile cioè id, questi due attributi
+        ci permettono di raggruppare elementi a cui vogliamo assegnare una certa grafica in comune.
+        <br>
+        Dopo la chiusura di header vediamo un blocco section, cos' è il contenuto di questo tag?
+        Tra i vari contenuti possiamo notare un tag img , dal nome si può immaginare che rappresenti un immagine,
+        non essendo possibile inserire testo dentro un immagine e non essendo sensato avere altri elementi interni
+        il tag img non richiede un tag di chiusura per questioni di bellezza stilistica in questi casi spesso si pone
+        un / prima della fine della fine del tag di apertura per esplicitare il fatto che non c'è un tag di chiusura.
+        Guardiamo velocemente gli attribui del tag img , ne parleremo successivamente ma il tag di per sè è molto semplice
+        troviamo un attributo src(source) che dice al browser dove trovare l'immagine, qui si può mettere un link a una qualsiasi 
+        immagine online oppure ad un file sul proprio computer, proviamo a capire dove si trova la foto e temporaneamente spostarla.
+        Leggiamo il valore da destra a sinistra , la foto è screen3.png che si trova nella cartella images che si trova nella cartella
+        attuale (progetto1). Presa l'immagine e spostata ricarichiamo la guida, al posto della foto vedremo un icona di foto non trovata
+        e troveremo una nota che è proprio il contenuto dell'attributo alt(alternative) che specifica cosa scrivere se l'immagine non viene trovata.
+        <br>
+        Se siamo arrivati fino a qui ritorniamo screen3.png al suo posto e vediamo un comportamento che inizialmente causa confusione ed è meglio vederlo subito.
+    </section>
+    <section>
+        <header class="normalTitle" >Cosa il browser ignora e come non farlo ignorare</header>
+        Immaginiamo di scrivere un testo su world sarà successo diverse volte che anzichè uno spazio tra due parole
+        ne abbiamo inseriti 2/3 per coprire questo tipo di errori il browser ignora gli spazi fra parole dopo il primo.
+        Se scriviamo "ciao tutti" oppure "ciao            tutti" avremo lo stesso risultato(beh c'erano 10 spazi tra ciao e tutti ma voi non li vedete).
+        Per motivi di adattabilità della pagina a schermi di dimensioni diverse anche se si va a capo il testo sul browser non andrà a capo in quel punto.
+        Come risolvere questi problemi nel caso in cui si voglia avere veramente scrivere ciao&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsptutti
+        al posto degli spazi aggiuntivi è necessario inserire la sequenza & nbsp (senza spazio tra & e nbsp)(non break space).
+        Per forzare un a capo si usa un tag (che non richiede chiusura) il tag &ltbr&gt (break che sta per line break/ a capo).
+        Immaginiamo di avere una parola lunghissima in un testo che siamo sicuri che su diversi schermi non sarebbe visualizzabile per interno,
+        il browser potrebbe decidere di troncarla in un punto a caso o la parola sforerebbe dalla zona di testo dedicata
+        in caso di tali parole(molt rare) si può usare un tag &ltwbr&gt nel punto in cui si vuole suggerire al browser di 
+        mandare la parola a capo per esempio supercarifragilisticespiralitoso. Scrivendo supercarifragilistice&ltwr&gtspiralitoso
+        la parola se dovesse sforare sarebbe separata in supercarifragilistice e a capo spiralitoso.
+    </section>
+    <section>
+        <header class="normalTitle" >I tag</header>
+        Una volta arrivati qui quello che ci rimane da fare per una pagina per ora senza grafica è conoscere i vari tag.
+        <br>
+        I tag:
+        <a id="listatag"></a>
+        <ul>
+            <li><a href="#comment">Commenti</a></li>
+            <li><a href="#p">Paragrafi e tag di testo</a> 
+                <ul>
+                    <li><a href="#abbr">Abbreviazione</a></li>
+                    <li><a href="#addr">Indirizzo</a></li>
+                    <li><a href="#blockquote">Blocco di citazione</a></li>
+                    <li><a href="#details">Testo Nascosto</a></li>
+                    <li><a href="#span">Span-Blocco utile per la parte grafica</a></li>
+                </ul>
+            </li>
+            <li><a href="#lists">Liste</a></li>
+            <li><a href="#a">Link e ancore</a></li>
+            <li><a href="#nav">Menu di navigazione</a></li>
+            <li><a href="#img">Immagini e figure</a></li>
+            <li><a href="#header">Titoli</a></li>
+            <li><a href="#article">Articoli e Sezioni</a></li>
+            <li><a href="#footer">Footer</a></li>
+            <li><a href="#audio">Suono(non consigliato se non si voglia dare una determinata atmosfera)</a></li>
+            <li><a href="#div">Il blocco div</a></li>
+            <li><a href="#class">Attributi speciali</a></li>
+            <li><a href="#characters">Caratteri Speciali</a></li>
+        </ul>
+        Per motivi di tempo e di utilità affronteremo principalmente questi tag che sono i principali blocchi che compongono una pagina.
+        Per cercare altri tag e la loro sintassi useremo <a href="https://www.w3schools.com/TAGS/default.ASP"> questo sito</a>.
+        <br>
+    </section>
+    <section>
+        <a id="comment"></a>
+        <header class="normalTitle" >Commenti</header>
+        Un commento è un pezzo di html che il browser ignora, ogni cosa contenuta in un commento viene ignorata.
+        Spesso vengono dimenticati dai programmatori portando ad avere pagine che loro stessi non sanno come funzionano.
+        Un primo motivo per aggiungere commenti è far capire agli altri cosa hai fatto , un secondo motivo è poter capire la tua pagina
+        magari diversi mesi dopo averla scritta, un ultimo motivo è magari lasciare un segno nella pagina che magari non si può vedere direttamente
+        come la paperella che fa miao che si trova in un commento sulla pagina di amazon (no ma sono serio c'è davvero).
+        Un commento è un blocco che non ha bisogno di un tag di chiusura e ha questa sintassi 
+        <br>
+        <code> &lt-- testo del commento --&gt</code> dove tra &lt-- e --&gt si può scrivere qualsiasi testo anche su più righe.
+        <br>
+        <img src="./images/amazon.png" alt="paperella che fa miao">
+    </section>
+    <section>
+        <a id="p"></a>
+        <header class="normalTitle" >Paragrafi</header>
+        Un paragrafo è un tag che può contenere del testo. 
+        La sintassi di un paragrafo è <br>
+        <code> &ltp&gt testo del paragrafo &lt/p&gt </code>
+        <br>
+        Sul questo tag non c'è tanto da dire , parliamo più del possibile testo del paragrafo, il testo può essere qualsiasi combinazione di
+        testo e altri tag che definiscono un determinato tipo di testo.
+        Presenteremo qualche tag di testo velocemente questi tag potrebbero benissimo essere saltati ma vederli e ricordarsi che esistono tag 
+        specifici per alcune situazioni.
+        <br>
+        <a id="abbr"></a>
+        Esiste un tag per definire un abbreviazione per esempio <abbr title="Hyper Text Markup Language">HTML</abbr>.
+        <br>
+        <code> &ltabbr title="testo da mostrare quando passa il mouse sopra"&gt abbreviazione &lt/abbr&gt</code>
+        <br>
+        <a id="addr"></a>
+        Esiste un tag per definire i contatti dell'autore di un articolo o di un determinata sezione , il testo verrà mostrato in corsivo.<br>
+        <address>
+            Scritto da Pietro Maldini.
+        </address>
+        <br>
+        La sintassi è<br>
+        <code>&ltaddress&gt informazioni del contatto &lt/address&gt</code>
+        <br>
+        <a id="blockquote"></a>
+        Esiste un tag per le citazioni ad altre fonti
+        <blockquote cite="url della fonte"> La sintassi per una citazione è: </blockquote>
+        <code>&ltblockquote cite="url della fonte"&gt testo citato &lt/blockquote&gt</code>
+        <br>
+        <a id="details"></a>
+        Esiste un tag per un componente di testo che può essere nascosto.
+        <details>
+            <summary>Testo mostrato</summary>
+            <p> testo opzionale</p>
+        </details>
+        La sintassi del blocco è <br>
+        <code> 
+            &ltdetails&gt<br>
+            &nbsp&nbsp&nbsp&ltsummary&gtTesto mostrato&lt/summary&gt<br>
+            &nbsp&nbsp&nbsp&ltp&gt testo opzionale&lt/p&gt<br>
+            &lt/details&gt<br>
+        </code>
+        <br>
+        <a id="span"></a>
+        Un ultimo blocco di testo è il blocco span. Questo blocco ci servirà nella parte grafica per poter
+        dare determinate caratteristiche ad un pezzo di testo 
+        <br>
+        <code>&ltp&gt testo normale &ltspan&gt testo che si vuole mostrare in modo diverso &lt/span&gt &lt/p&gt</code>
+        <br>
+
+    </section>
+    <section>
+        <a id="lists"></a>
+        <header class="normalTitle" >Le liste</header>
+        Esistono due tipi di liste principali le liste ordinate e le liste non ordinate.
+        Entrambe le liste sono tag contententi un elenco di tag chiamati li (list item).
+        La sintassi per una lista ordinata è
+        <br>
+        <code> &ltol&gt lista di li &lt/ol&gt</code>  dove ol sta per ordered list
+        <br>
+        Per una lista non ordinata abbiamo invece 
+        <br>
+        <code> &ltul&gt lista di li &lt/ul&gt </code> dove ul sta per unordered list
+        <br>
+        La lista di li è un elenco di lunghezza non fissa di tag ripetuti.
+        <br>
+        <code> &ltli&gt contenuto del elemento della lista &lt/li&gt</code>  dove il contenuto può essere del testo o i tag descritti nella <a href="#p">sezione precedente</a>.
+        <br> Un esempio di lista disordinata l'abbiamo visto nella <a href="#listatag">lista dei tag</a>
+        <br> Un esempio di lista ordinata è la seguente:
+        <ol>
+            <li>antipasto</li>
+            <li>primo</li>
+            <li>secondo</li>
+            <li>contorno</li>
+            <li>dolce</li>
+        </ol>
+        <img src="./images/list.png" alt="immagine lista">
+        <br>
+        è possibile modificare il modo in cui l'ordinamento è mostrato(usare numeri romani o altre forme di numerazione) ma questo
+        lo vedremo nella sezione di grafica.
+    </section>
+    <section>
+        <a id="a"></a>
+        <header class="normalTitle" >Link e ancore </header>
+        Come facciamo a definire un link ad una qualsiasi pagina per esempio alla <a href="http://www.google.com">homepage di google</a>?
+        Per inserire un link ad una pagina si utilizza il tag a (anchor).
+        Questo tag può essere usato in qualsiasi posto si possa inserire del testo per esempio 
+        all'interno del tag p e dei vari tag di testo visti fino ad ora.
+        La sintassi del tag è 
+        <br>
+        <code>&lta href="link"&gt testo che diventa un link &lt/a&gt</code> dove il testo contenuto tra i tag di apertura e chiusura nel caso del link sopra
+        è homepage di google.
+        <br>
+        Il tag "a" permette oltre a creare link ad altre pagine anche di creare link a parti diverse della pagina.
+        Per esempio <a href="#listatag">la lista dei tag</a> è un insieme di collegamenti interni alla pagina.
+        Per creare un link interno ad una pagina servono due componenti, una destinazione e un punto di partenza.
+        La destinazione di un collegamento interno si crea usando sempre il tag "a" però questa volta con un attributo 
+        diverso anzichè href usiamo l'attributo id(praticamente gli diamo un nome), posizioniamo il tag a prima del blocco a cui vorremo saltare e 
+        all'attributo id diamo un nome significativo (senza spazi), per la lista dei tag per esempio abbiamo un tag<br>
+        <code>&lta id="listatag"&gt&lt/a&gt</code>
+        <br>
+        Con questo tag abbiamo posizionato un'ancora , un punto nella pagina con un determinato id.
+        Per creare un collegamento a quel punto usiamo sempre il tag "a" ma essendo il link interno non avremo più un link come 
+        "http://www.google.com" per definire un salto all'ancora con id listatag come qui :<a href="#listatag">la lista dei tag</a>
+        dobbiamo dire al browser che il collegamento è interno ed è verso la ancora con id listatag mettendo come valore 
+        dell'attributo href #listatag dove # indica che il collegamento è interno 
+        <br>
+        <code>&lta href="#listatag"&gt la lista dei tag &lt/a&gt</code>
+        <br>
+        Se si omette un id di ancora dopo # il collegamento interno riporta alla <a href="#">cima della pagina</a>.
+        <br> 
+        Ci sono altri utilizzi per il tag a quali aprire l'applicazione di mail con il destinatario precompilato oppure
+        aprire l'applicazione che gestisce le chiamate con un numero precompilato come quando su google si cerca un negozio
+        o un ristorante e si schiaccia "chiama" sul browser e appare il numero già compilato pronto per essere chiamato.
+        Per questi si usa sempre href ma con sintassi diverse del collegamento , per quanto semplice la sintassi preferisco
+        non inserirli nella guida per ridurre la quantità di informazioni a quelle necessarie. 
+        In caso di interesse l'esempio in
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">questa pagina</a> mostra questi ultimi 2 tipi di link. 
+        <br>Ora dovremo essere in grado di capire questo pezzo di html<br>
+        <img src="./images/esempio misto 1.png" alt="immagine lista tag"/>
+    </section>
+    <section>
+        <a id="nav"></a>
+        <header class="normalTitle" >Menu di navigazione</header>
+        Un esempio qui può servire molto.
+        <nav>
+            <a href="#">Inizio Pagina</a> |
+            <a href="#listatag"> Lista tag</a> | 
+            <a href="#lists"> Liste </a>
+        </nav>
+        Il blocco usato è il blocco nav che viene usato per contenere collegamenti spesso interni alla pagina e normalmente è posto
+        in cima ad una pagina. 
+        La sintassi è molto semplice :
+        <br>
+        <code>&ltnav&gt lista collegamenti &lt/nav&gt</code>
+        <br> La lista di collegamenti sono diversi tag a posti uno successivo all'altro . Il tag nav può contenere teoricamente
+        qualsiasi testo , questa caratteristica può essere sfruttata per esempio per aggiungere separatori tra i blocchi "a"
+        nel caso del menu di esempio sopra | è stato usato per separare i vari link.
+        <img src="./images/nav1.png" alt="immagine esempio nav">
+    </section>
+    <section>
+        <a id="img"></a>
+        <header class="normalTitle" >Immagini e figure</header>
+        Un immagine può essere aggiunta in qualsiasi parte del documento dove si può inserire del testo. 
+        All'interno di un immagine non è possibile inserire altri tag , il tag img non necessita un tag di chiusura.
+        <br>
+        <code>&ltimg src="./images/img.png" alt="testo da mostrare se manca l'immagine" title="testo mostrato quando si passa sopra col mouse"/&gt </code>
+        <br>
+        Il tag img ha 3 attributi principali src
+        <br>
+        <img src="./images/img.png" alt="testo da mostrare se manca l'immagine" title="testo mostrato quando si passa sopra col mouse" /> 
+        <br>
+        Per aggiungere una descrizione sopra o sotto un immagine si usano due tag , il blocco figure di cui l'immagine dev'essere messa come contenuto
+        e un tag figcaption.
+        <br>
+        <code>
+            &ltfigure&gt
+            <br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&ltimg src="./images/img.png" alt="testo da mostrare se manca l'immagine" title="testo mostrato quando si passa sopra col mouse"&gt
+            <br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&ltfigcaption&gtFig.1 - Foto con scritta sotto&lt/figcaption&gt
+            <br>
+            &lt/figure&gt
+        </code>
+        <br>
+        <figure>
+            <img src="./images/img2.png" alt="testo da mostrare se manca l'immagine" title="testo mostrato quando si passa sopra col mouse">
+            <figcaption>Fig.1 - Foto con scritta sotto</figcaption>
+        </figure>
+    </section>
+    <section>
+        <a id="header"></a>
+        <header class="normalTitle" >Titoli</header>
+        I titoli sono dei tag di testo contenuti in un tag chiamato header.  
+        Esistono 6 livelli di titoli con tag h1,h2,h3,h4,h5,h6 dove minore è il numero più il titolo è grande.
+        <header>
+            <h1>Titolo di primo livello</h1>
+            <h2>Titolo di secondo livello</h2>
+            <h3>Titolo di terzo livello</h3>
+            <h4>Titolo di quarto livello</h4>
+        </header>
+        <br>
+        I titoli sopra mostrano un esempio di h1,h2,h3,h4. Il titolo h1 va usato una sola volta nell'intera pagina
+        è buona pratica inoltre usare i titoli in ordine crescente e non saltare livelli.
+        <br>
+        <code>
+            &ltheader&gt<br>
+            &nbsp&nbsp&nbsp&nbsp&lth1&gtTitolo di primo livello&lt/h1&gt<br>
+            &nbsp&nbsp&nbsp&nbsp&lth2&gtTitolo di secondo livello&lt/h2&gt<br>
+            &nbsp&nbsp&nbsp&nbsp&lth3&gtTitolo di terzo livello&lt/h3&gt<br>
+            &nbsp&nbsp&nbsp&nbsp&lth4&gtTitolo di quarto livello&lt/h4&gt<br>
+            &lt/header&gt</code>
+        <br>
+        <img src="./images/headers.png" alt="titoli" >
+    </section>
+    <section>
+        <a id="article"></a>
+        <header class="normalTitle">Articoli</header>
+        Gli articoli sono dei tag il cui scopo è solo contenere altri blocchi di testo ,
+        Tipicamente il contenuto parte con un tag header.
+        Il resto del contenuto tipicamente è un elenco di tag section.
+        <br>
+        <code>&ltarticle&gt contenuto &lt/article&gt</code>
+        <br>
+        Il tag section è ha sua volta un contenitore di blocchi di testo con un tag header iniziale facoltativo.
+        <br>
+        <code>&ltsection&gt header facoltativo + lista di tag di testo &lt/section&gt</code>
+        <br>
+        <img src="./images/article.png" alt="esempio article">
+        <br>
+        In questa immagine vediamo due regole non rispettate, lo header che dovrebbe essere solo un
+        contenitore per elementi tra h1 e h6. Si vede inoltre che il testo è inserito direttamente nel tag
+        section senza usare blocchi di testo e alcuni a capo sono forzati con &ltbr&gt in caso di un testo
+        è consigliato usare blocchi &ltp&gt per dividere il testo in paragrafi , quando si chiude un &ltp&gt
+        e se ne apre un altro il contenuto andrà a capo. (questo serve per distinguere i paragrafi che tipicamente sono
+        regioni di testo con argomenti in comune). è presente un tag &ltcode&gt questo tag si usa per
+        delimitare una parte di testo che è codice 
+        (e quindi si può nella sezione grafica decidere di assegnare ad esso uno stile differente dal testo circostante).  
+    </section>
+    <section>
+        <a id="footer"></a>
+        <header class="normalTitle">Footer</header>
+        Il footer rappresenta un blocco di testo che va a posizionarsi in fondo ad un articolo e/o in fondo ad una pagina.
+        Un esempio di footer è la nota a piè di pagina di Word.
+        <footer><p>Testo del footer</p> </footer>
+        La sintassi è la seguente
+        <br>
+        <code>
+            &ltfooter&gt lista di tag di testo &lt/footer&gt
+        </code>
+        <br>
+        <img src="./images/footer.png" alt="immagine footer">
+    </section>
+    <section>
+        <a id="audio"></a>
+        <header class="normalTitle">Suono</header>
+        Il tag audio è da evitare se non in casi speciali, permette di riprodurre un file audio ma 
+        spesso la riproduzione non è gradita. Anche in caso in cui i controlli siano forniti sull'interfaccia
+        spesso vengono ignorati.
+        Per completezza vediamo la sintassi velocemente.
+        <br>
+        <code>
+            &ltaudio controls autoplay loop&gt
+            &ltsource src="percorso del file formato.mp3" type="audio/mpeg"&gt
+            &lt/audio&gt
+        </code>
+        <br>
+        Il tag audio richiede uno o più tag source che con l'attributo type definiscono il tipo di file(mp3 nel caso di esempio)
+        e il link alla risors nell'attributo src.
+        Il tag audio può avere 3 attributi che non hanno bisogno di avere assegnato un valore.
+        Controls se inserito mostra i controlli per fermare o far ripartire la musica.
+        Autoplay se inserito fa partire la riproduzione dell'audio quando la pagina si è caricata.
+        Loop fa andare in loop l'audio una volta che la riproduzione termina.
+        Quindi per esempio se vogliamo che l'audio parta quando la pagina si carica ma non vogliamo dare controlli all'utente
+        per fermarla ma vogliamo che non vada in loop useremo come tag di apertura.<br>
+        <code>&ltaudio autoplay &gt</code>
+    </section>
+    <section>
+        <a id="div"></a>
+        <header class="normalTitle">Il blocco div</header>
+        Fino ad ora abbiamo visto diversi blocchi alcuni con contenuti fissi come immagini altri con contenuti
+        che potevano andare da semplice testo a elenchi di tag di testo. Il blocco div è il primo blocco che preso da solo
+        non ha alcun significato, div indica semplicemente un blocco, serve per raggruppare componenti della pagina.
+        può contenere qualsiasi tag o elenco di tag e può essere contenuto praticamente in qualsiasi tag a parte tag come &ltimg&gt
+        in cui non è presente un blocco di chiusura.
+        Il blocco div serve per la sezione grafica.
+        La sintassi è semplice.
+        <br>
+        <code>
+            &ltdiv&gt qualsiasi tipo di tag o lista di tag &lt/div&gt
+        </code>
+    </section>
+    <section>
+        <a id="class"></a>
+        <header class="normalTitle">Attributi speciali</header>
+        Esistono due attributi speciali che useremo nella parte di grafica , questi attributi possono
+        essere assegnati a qualsiasi tag contenuto nel body(e anche al body stesso).
+        Questi due attributi sono id e class. L'attributo id può avere qualsiasi valore ma per il corretto
+        funzionamento della pagina è necessario che non esistano elementi con lo stesso id , questo attributo
+        l'abbiamo incontrato già coi link interni alla pagina , l'utilizzo di id per definire un punto di salto interno
+        alla pagina necessita che non esistano due elementi con lo stesso id, altrimenti cliccando un link interno
+        il comportamento del browser sarebbe indefinito, a quale dei due elementi con id corrispondente al link dovrebbe portarci?
+        L'attributo class somiglia all'id ma non ha la restrizione di dover essere unico in tutto il documento.
+        <br>
+        Per assegnare certe caratteristiche specifiche ad elementi della pagina sarà necessario poter distinguere i vari elementi 
+        della pagina, l'attributo id servirà per definire elementi unici per un unico elemento per esempio un elemento a  cui vogliamo
+        mettere uno sfondo unico e non riutilizzato nel resto della pagina.
+        L'attributo class ci servirà invece per raggruppare sotto la stessa classe elementi con caratteristiche comuni
+        per esempio tutti i titoli a cui vogliamo assegnare una certa dimensione e colore.
+        Sia a div che a class è comodo assegnare nomi significativi per poter rileggere e capire le proprie intenzioni in un secondo momento.
+    </section>
+    <section>
+        <a id="characters"></a>
+        <header class="normalTitle">Caratteri speciali</header>
+        <img src="./images/simboli speciali.jpg" alt="caratteri speciali" >
+        <br>
+        Per ulteriori simboli guardare la colonna entity code a questo <a href="https://www.whatsmyip.org/html-characters/">sito</a>.
+    </section>
+</article>
+
+<footer>
+    Guida scritta da Pietro
+    <br>
+    Per la sezione grafica andriamo in quest'altra <a href="./grafica.html"> pagina</a>
+</footer>
+</body>
+</html>
