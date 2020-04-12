@@ -13,11 +13,11 @@
             <nav>
                 <a href="#">La grafica di una pagina html</a>
                 <br>
-                <a href="#css">Cos'è il css</a>
+                <a href="#css">Cos'è il CSS</a>
                 <br>
-                <a href="#sintax">Vediamo com'è la sintassi di un elemento css</a>
+                <a href="#sintax">La sintassi del CSS</a>
                 <br>
-                <a href="#selectors">Cos'è un selettore</a>
+                <a href="#selectors">I Selettori</a>
                 <br>
                 <a href="#properties1">Un primo sguardo alle proprietà</a>
                 <br>
@@ -35,8 +35,239 @@
                 <header>
                     <h1>La grafica di una pagina html</h1>
                 </header>
-
-
+                <section>
+                    <p>
+                    Fino ad ora abbiamo imparato l'html la sua sintassi e i vari tag che possono essere usati per comporre una pagina.
+                    </p>
+                    <p>
+                    In questa seconda guida vedremo come applicare elementi grafici alla pagina, cambiare colore ai comportamenti posizionare
+                    gli elementi e alla fine come rendere la nostra pagina più adattiva a qualsiasi ambiente(browser e mobile).
+                    </p>
+                    <p>
+                    Ora che siamo arrivati a questo punto il tag che abbiamo cancellato dalla head ci servirà in quanto avverte il browser di usare
+                    come base delle sue misure la dimensione del browser. Andiamo nella head e scriviamo meta tra le varie opzioni scegliamo
+                    meta:vp e automaticamente scriverà una riga che avverte di considerare la larghezza del dispositivo per evitare di avere pagine
+                    in cui l'utente è costretto a muoversi non solo in verticale ma anche in orizzontale(posizionando male gli oggetti è comunque possibile
+                    costringere l'utente a dover fare scroll orizzontali).
+                    </p>
+                    <p>
+                    Il linguaggio usato per aggiungere la sezione grafica è chiamato CSS , cascading style sheets, fogli di stile a cascata.
+                    </p>
+                </section>
+                <section>
+                    <a id="css"></a>
+                    <header>
+                        <h2>Cos'è il CSS</h2>
+                    </header>
+                    <p>
+                        Il CSS è un linguaggio che definisce la componente di rendering della pagina, i CSS vengono definiti usando file di testo
+                        con estensione .css. 
+                    </p>
+                    <p> 
+                        In un file css vengono specificate delle regole che permettono al browser di comprendere come
+                        i vari elementi di un documento html debbano essere mostrati all'utente.
+                    </p>
+                    <p>
+                        Le regole css possono venire usate anche direttamente dentro un file html ma pensiamo per esempio di avere migliaia di paragrafi
+                        se usassimo le regole css dentro il documento html sarebbe necessario prendere singolarmente ogni elemento e mettere come attributo
+                        una proprietà definibile nei css. Se poi notassimo un errore dovremo correggere ogni punto in cui l'errore è definito. 
+                        Usando i CSS è possibile creare una regola specifica per ogni paragrafo
+                        e in caso di modifica si può correggere in un solo punto
+                        risparmiando tempo e difficoltà nel cercare tutti i punti in cui la regola sarebbe stata replicata.
+                        Un altro motivo per usare i css è che possono venire usati da più pagine che hanno una struttura simile. pensiamo a pagine come amazon
+                        in cui quasi tutte le schermate hanno la stessa parte superiore.
+                    </p>
+                    <p>
+                        è possibile separare componenti del css in file separati, per esempio si potrebbe avere un css per le parti comuni e un css per ogni pagina
+                        in cui sono presenti gli elementi non comuni questo aiuta anche la leggibilità in quanto separare regole con scopi diversi aiuta
+                        molto a comprendere gli obiettivi delle singole regole.
+                    </p>
+                    <p>
+                        Per aggiungere dire al browser quali CSS usare per visualizzare il documento html si usa il tag link nel tag head del documento.
+                        <br>
+                        Basta scrivere link e selezionare link:css e modificare l'attributo href per farlo riferire al nostro file .css.
+                    </p>
+                    <p>
+                        Avendo un nuovo tipo di risorsa nella nostra cartella progetto1 creiamo una nuova cartella chiamata CSS. Poi su visual studio code 
+                        clicchiamo su file->new file  e poi su file-> save as e chiamiamo il file style e scegliamo nella tendina salva come CSS.
+                        A questo punto nel nostro file html possiamo mettere assegnare ad href il valore "./CSS/style.css".
+                        <br>
+                        <code>&ltlink rel="stylesheet" type="text/css" href="./CSS/style.css"&gt</code>
+                    </p>
+                </section>
+                <section>
+                    <a id="sintax"></a>
+                    <header>
+                        <h2>La Sintassi del CSS</h2>
+                    </header>
+                    <p>
+                        Un file CSS è formato da tanti blocchi definiti regole , ogni regola ha due componenti.<br>
+                        <ol>
+                            <li>I selettori</li>
+                            <li>Il corpo della regola</li>
+                        </ol>
+                    </p>
+                    <p>
+                        La prima componente formata da uno o più selettori definisce quali elementi dell'html vengono modificati dalla regola.
+                        <br>
+                        Il corpo della regola definisce le proprietà da assegnare agli elementi selezionati.
+                    </p>
+                    <p>
+                        In questa guida impareremo come usare i vari selettori esistenti e a distinguere le varie proprietà che possono essere assegnate.
+                    </p>
+                </section>
+                <section>
+                    <a id="selectors"></a>
+                    <header>
+                        <h2>I Selettori</h2>
+                    </header>
+                    <p>
+                        I selettori sono la parte di una regola CSS che definisce su quali elementi la regola ha effetto.
+                    </p>
+                    <section>
+                        <header>
+                            <h3>I Selettori base</h3>
+                        </header>
+                        <p>
+                            Il selettore più facile è il selettore di tag , questo selettore permette di applicare una regola ad ogni elemento
+                            del documento html con un determinato tag. Il selettore di tag semplicemente è il nome del tag, per esempio per applicare
+                            una regola a tutti i paragrafi(&ltp&gt) avremo come selettore p .
+                            <br>
+                            <code>&ltnometag&gt è selezionato dal selettore nometag</code>
+                        </p>
+                        <p>
+                            Esistono altri due selettori base che si basano su due attributi speciali degli elementi html, si può selezionare un elemento
+                            per class o per id. Come già detto nella guida sull'html l'id è univoco mentre la class permette di avere più elementi con la stessa
+                            classe. 
+                        </p>
+                        <p>
+                            <code>Per selezionare l'elemento con id="valoreid" si usa il selettore #valoreid</code>
+                        </p>
+                        <p>
+                            <code>Per selezionare gli elementi con class="valoreclass" si usa il selettore .valoreclass</code> 
+                            <br>(il punto è quello che lo distingue dal selettore di tag)
+                        </p>
+                        <p>
+                            Esistono inoltre il selettore multiplo e il selettore universale , il primo serve per selezionare
+                            più elementi a cui assegnare la stessa regola potrei creare due regole con selettori diversi e corpo uguale, 
+                            oppure si può creare una lista dei selettori separati da virgola e scrivere il corpo della regola una sola volta.
+                            <br>
+                            scrivere le due regole <br>
+                            <code>
+                                p Corpo della Regola <br>
+                                .valoreClass Corpo della Regola <br>
+                            </code>
+                            è equivalente a <br>
+                            <code>
+                                p , .valoreClass Corpo della Regola
+                            </code>
+                            <br>
+                            Il selettore universarle serve per applicare ad ogni elemento una determinata regola. La sua sintassi è 
+                            <br>
+                            <code>*</code> questo selettore seleziona ogni elemento
+                            <br>
+                            Perchè mai selezionare tutti gli elementi? In alcune occasioni risulta utile per esempio quando si vogliono 
+                            sovrascrivere valori di defaul del browser di spaziatura degli elementi, un altro utilizzo verrà mostrato nella prossima sezione.
+                            <br>
+                            L'ultimo selettore base che vediamo è il selettore di intersezione , quindi un selettore che seleziona elementi html che verrebbero selezionati
+                            da più selettori contemporaneamente. è possibile formare tale selettore ponendo i vari selettori senza spazi tra loro,potendo avere un elemento
+                            solo un tag e solo un id questo selettore di interesezione può essere composto da un numero arbitrario di classi e da massimo un selettore di tag e massimo un selettore di id.
+                            Poniamo l'esempio di voler selezionare il seguente tag &ltp id="valID" class="cl1 cl2"&gt. Alcuni dei selettori possibili sarebbero:
+                            <br>
+                            <code>
+                                p#valID.cl1.cl2 ma sarebbe poco significativo, esiste solo un elemento con id=valID quindi il resto del selettore è sovrabbondante
+                                <br>
+                                p.cl1.cl2 
+                                <br>
+                                .cl1.cl2
+                                <br>
+                                p.cl2
+                            </code>      
+                            <br>
+                        </p>
+                        <p>
+                            Spesso si usa un selettore formato da una lista di selettori per indicare parti in comune e poi per componenti specifiche di un elemento
+                            si può fare un altra regola. Un selettore usato per una regola può essere usato in qualsiasi altra regola senza restrizioni.
+                        </p>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>I Selettori gerarchici</h3>
+                        </header>
+                        <p>
+                            Esistono dei selettori che sfruttano la gerarchia tra tag per selezionare gli elementi a cui applicare una regola.
+                            Alcuni di questi possono essere utili. Altri verrano trattati molto rapidamente in quanto raramente usati.
+                        </p>
+                        <p>
+                            Cosa intendiamo per gerarchia tra tag.Immaginiamo il documento html generato da visual studio code con l'autocompletamento scrivendo
+                            html:5. Un tag contenuto in un altro tag possiamo definirlo figlio del tag che lo contiene. Per esempio head è figlio di html e anche
+                            body è figlio di html, i tag meta sono figli di head, quindi risultano nipoti di html.
+                            Un altra relazione che ci può servire è quella tra i due tag meta, essendo entrambi figli di head vengono definiti fratelli.
+                            Una volta compresa la gerarchia vediamo come è possibile selezionare elementi usando relazioni gerarchiche.
+                        </p>
+                        <p>
+                            Per comporre un selettore gerarchico vengono usati due selettori che possono essere di base o a loro volta gerarchici.
+                            <br>
+                            Per presentare la sintassi useremo sel1 ed sel2 per rappresentare due selettori di base. Più avanti applicheremo selettori gerarchici
+                            per comporre selettori gerarchici.
+                            <ul>
+                                <li>Selettore di discendente(figlio,nipote etc)<code>elem1 elem2</code> Seleziona gli elem2 discendenti di elem1</li>
+                                <li>Selettore di figlio <code>elem1>elem2</code> Seleziona gli elem2 figli di elem1</li>
+                                <li>Selettore di immediato successivo <code>elem1+elem2</code> Seleziona elem 2 fratello di elem1 ma immediatamente successivo ad elem1</li>
+                                <li>Selettore di successivo<code>elem1~elem2</code>Seleziona elem2 fratello di elem1 in qualsiasi posizione successiva</li>
+                            </ul>
+                            Proviamo a fare un po' di esercizio.
+                        </p>
+                        <p>
+                            Proviamo a capire che selettori sono questi.
+                            <ul>
+                                <li>
+                                    <details>
+                                        <summary>p span</summary>
+                                        <p> span discendenti di p</p>
+                                    </details>
+                                </li>
+                                <li>
+                                    <details>
+                                        <summary>div>p</summary>
+                                        <p> p figli di div</p>
+                                    </details>
+                                </li>
+                                <li>
+                                    <details>
+                                        <summary>.cl1+p</summary>
+                                        <p> p immediatamente successivi a tag con class="cl1"</p>
+                                    </details>
+                                </li>
+                                <li>
+                                    <details>
+                                        <summary>#valID~.cl2</summary>
+                                        <p> tag con class="cl2" successivi al tag con ID="valID"</p>
+                                    </details>
+                                </li>
+                                <li>
+                                    <details>
+                                        <summary>article section>p</summary>
+                                        <p> p figli di section , dove le section devono essere discendenti di article</p>
+                                        <p> O se letto nella direzione opposta, degli article seleziona le section discendenti e di queste seleziona i p figli</p>
+                                    </details>
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                            Abbiamo visto nell'ultimo esercizio una catena di selettori gerarchici. La composizione non è difficile però è raro che serva
+                            usare selettori gerarchici incatenati.
+                        </p>
+                    </section>
+                    <section>
+                        <header>
+                            <h3>Gli pseudo selettori</h3>
+                        </header>
+                        <p>
+                            
+                        </p>
+                    </section>
+                </section>
             </article>
         </div>
     </div>
