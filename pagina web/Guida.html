@@ -84,7 +84,7 @@ Il primo blocco meta dice il charset cioè l'insieme di caratteri che il browser
 si verifica il fenomeno dei <a href="https://it.wikipedia.org/wiki/Mojibake"> mojibake</a><br>
 Il set UTF-8 permette di rappresentare praticamente tutti i caratteri comuni per quasi tutte le lingue. Più di così non andrei a fondo ma come curiosità 
 se si toglie quella riga in alcuni browser i caratteri accentati non vengono accettati e per inserli nel testo era necessario usare sequenze di caratteri 
-come & agrave(senza lo spazio) per inserire à.
+come &ampagrave per inserire à.
 <br>
 Il secondo blocco meta non ci serve quindi lo cancelliamo.
 <br>
@@ -163,8 +163,8 @@ Ora abbiamo visto tutto ciò che visual studio code ha scritto per noi. Da adess
         Se scriviamo "ciao tutti" oppure "ciao            tutti" avremo lo stesso risultato(beh c'erano 10 spazi tra ciao e tutti ma voi non li vedete).
         Per motivi di adattabilità della pagina a schermi di dimensioni diverse anche se si va a capo il testo sul browser non andrà a capo in quel punto.
         Come risolvere questi problemi nel caso in cui si voglia avere veramente scrivere ciao&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsptutti
-        al posto degli spazi aggiuntivi è necessario inserire la sequenza & nbsp (senza spazio tra & e nbsp)(non break space).
-        Per forzare un a capo si usa un tag (che non richiede chiusura) il tag &ltbr&gt (break che sta per line break/ a capo).
+        al posto degli spazi aggiuntivi è necessario inserire la sequenza <code> &ampnbsp</code> (non break space).
+        Per forzare un a capo si usa un tag (che non richiede chiusura) il tag <code>&ltbr&gt</code> (break che sta per line break/ a capo).
         Immaginiamo di avere una parola lunghissima in un testo che siamo sicuri che su diversi schermi non sarebbe visualizzabile per interno,
         il browser potrebbe decidere di troncarla in un punto a caso o la parola sforerebbe dalla zona di testo dedicata
         in caso di tali parole(molt rare) si può usare un tag &ltwbr&gt nel punto in cui si vuole suggerire al browser di 

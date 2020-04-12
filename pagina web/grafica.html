@@ -62,6 +62,9 @@
                     <p>
                         Il CSS è un linguaggio che definisce la componente di rendering della pagina, i CSS vengono definiti usando file di testo
                         con estensione .css. 
+                        <br>
+                        Per vedere la lista di selettori esistenti con esempi aggiuntivi oltre alla guida andare a questa
+                         <a href="https://www.w3schools.com/cssref/css_selectors.asp">pagina</a>.
                     </p>
                     <p> 
                         In un file css vengono specificate delle regole che permettono al browser di comprendere come
@@ -114,6 +117,12 @@
                     </p>
                     <p>
                         In questa guida impareremo come usare i vari selettori esistenti e a distinguere le varie proprietà che possono essere assegnate.
+                    </p>
+                    <p>
+                        è possibile inoltre inserire commenti tra le varie regole , questo può essere comodo per indicare lo scopo delle regole o creare separatori
+                        tra regole che hanno scopo diverso. La sintassi di un commento è 
+                        <br>
+                        <code>/*</code> testo del commento <code>*/</code>
                     </p>
                 </section>
                 <section>
@@ -261,12 +270,80 @@
                     </section>
                     <section>
                         <header>
-                            <h3>Gli pseudo selettori</h3>
+                            <h3>I selettori di pseudo classi</h3>
                         </header>
                         <p>
-                            
+                            Cosa si intende per pseudo classi, possiamo indicare una pseudo classe come un attributo class che non viene impostato
+                            dall'utente ma automaticamente dal browser nella sua struttura interna
+                            Per esempio pensiamo ai link di una pagina web, se il link non è visitato normalmente lo vediamo in blu, se è stato visitato è in violetto
+                            e se passiamo sopra col mouse su un link il suo colore cambia. Questo comportamento è dovuto ad un documento CSS interno al browser che definisce
+                            il comportamento di una pagina in caso di mancata definizione di ulteriori regole a sovrascrivere. Però coi selettori visti fino ad ora non 
+                            ci è possibile selezionare un link a seconda del fatto che sia stato visitato o meno. 
+                            Il browser per ricordare questo tipo di informazioni assegna delle pseudo classi agli elementi.
+                            Per esempio quando viene posizionato il mouse sopra un elemento questo ottiene oltre alle sue classi e al suo id una pseudo classe di nome 
+                            hover.
+                            <br>
+                            Ora vedremo i più tipici selettori di pseudo classe useremo elem,elem1 per indicare due generici selettori base o gerarchici. 
+                            <br>
+                            <ul>
+                                <li>Selettore che seleziona l'elemento su cui il mouse è posizionato<code>elem:hover</code></li>
+                                <li>Selettore link non visitati<code>elem:link</code></li>
+                                <li>Selettore link visitato <code>elem:visited</code></li>
+                                <li>Selettore che esclude degli elementi della selezione<code>elem:not(elem2)</code></li>
+                                <li>Selettore che seleziona la zona selezionata dall'utente<code>elem::selection</code></li>
+                                <li>
+                                    più complessi e/o che probabilmente non useremo
+                                    <ul>
+                                        <li>Selettore di link mentre il mouse rimane cliccato sopra<code>elem:active</code></li>
+                                        <li>Seleziona tag senza contenuto:<code>elem:empty</code></li>
+                                        <li>Selettore della zona immediatamente dopo un tag: <code>elem::after</code></li>
+                                        <li>Selettore della zona immediatamente prima un tag: <code>elem::before</code></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </p>
                     </section>
+                </section>
+                <section>
+                    <a id="properies1"></a>
+                    <header>
+                        <h3>
+                            Un primo sguardo alle proprietà
+                        </h3>
+                        <p>
+                            Vediamo ora la seconda parte di una regola css.
+                            La sezione di proprietà è un elenco di attributi che si possono assegnare ad uno o più elementi
+                            selezionati da un selettore. 
+                        </p>
+                        <p>
+                            La sintassi del corpo della regola è la seguente
+                            <br>
+                            <code>
+                                { </code> Lista di proprietà da assegnare <code> }
+                            </code>
+                            <br>
+                            La lista di proprietà è un elenco di elementi della seguente forma
+                            <br>
+                            <code>
+                                nome proprietà : valore ;
+                            </code>
+                        </p>
+                        <p>
+                            Vediamo ora un esempio:  <span id="spanExample"> Consideriamo questo span con id="spanExample"</span>
+                            <br>
+                            Per avere questo risultato abbiamo inserito nel documento css la seguente regola
+                            <br>
+                            <code>
+                                #spanExample{ <br>  
+                                &nbsp&nbsp&nbsp&nbspcolor:red;<br>
+                                &nbsp&nbsp&nbsp&nbspborder-style :dotted;<br>
+                                &nbsp&nbsp&nbsp&nbspfont-size:20px;<br>
+                                }<br>
+                            </code>
+                            Possiamo notare che andiamo a capo ad ogni proprietà questo ci aiuta a leggere ogni singola proprietà.
+                            Vediamo cosa facciamo in questa regola, selezioniamo un elemento con id spanExample 
+                        </p>
+                    </header>
                 </section>
             </article>
         </div>

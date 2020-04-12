@@ -21,9 +21,10 @@ body > footer{
   --scrollbarhandlecolor--:rgba(129, 216, 208,1);
   --scrollbarhovercolor--:rgba(129,216,208,0.7);
   --scrollradius--:min(2vw,2vh);
+  --listoffset--:min(11.5vh,11.5vw);
 }
  
-* {
+div,article,section,p {
     margin:0px;
     padding:0px;
     box-sizing: border-box;
@@ -102,4 +103,14 @@ section p:first-of-type
 header{
   margin-top:3vh ;
 }
- 
+
+ul,ol{
+  margin-left:var(--listoffset--);
+  text-align: justify;
+}
+
+#spanExample{   
+  color:red;
+  border-style :dotted;
+  font-size:20px;
+}
