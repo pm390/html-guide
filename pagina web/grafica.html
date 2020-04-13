@@ -27,7 +27,7 @@
                 <br>
                 <a href="#mediaQuery">Cosa si intende per media Query e interfacce adattive</a>
                 <br>
-                <a href="#values">Che valori può avere una regola css</a>
+                <a href="#values">Valori delle proprietà</a>
             </nav>
         </div>
         <div id="corpo">
@@ -223,7 +223,7 @@
                                 <li>Selettore di discendente(figlio,nipote etc)<code>elem1 elem2</code> Seleziona gli elem2 discendenti di elem1</li>
                                 <li>Selettore di figlio <code>elem1>elem2</code> Seleziona gli elem2 figli di elem1</li>
                                 <li>Selettore di immediato successivo <code>elem1+elem2</code> Seleziona elem 2 fratello di elem1 ma immediatamente successivo ad elem1</li>
-                                <li>Selettore di successivo<code>elem1~elem2</code>Seleziona elem2 fratello di elem1 in qualsiasi posizione successiva</li>
+                                <li>Selettore di successivo<code>elem1~elem2</code> Seleziona elem2 fratello di elem1 in qualsiasi posizione successiva</li>
                             </ul>
                             Proviamo a fare un po' di esercizio.
                         </p>
@@ -372,7 +372,7 @@
                             <ul>
                                 <li>Colore dello sfondo <code>background-color</code> può assumere come valore qualsiasi colore </li>
                                 <li>Immagine di sfondo <code>background-image</code> per definire che immagine usare per sfondo<br>
-                                    si scrive url("url dell'immagine") per esempio("./images/background1.png")</li>
+                                    si scrive url("url dell'immagine") per esempio ("./images/background1.png")</li>
                                 <li>Dimensione dello sfondo <code>background-size</code> I valori possibili sono </li>
                                 <ul>
                                     <li><code>larghezza altezza</code> per esempio 10px 20px; indica un immagine larga 10pixel e alta 20pixel </li>
@@ -706,6 +706,226 @@
                             Cosa si intende per ereditarietà
                         </h3>
                     </header>
+                    <p>
+                        In CSS non è obbligatorio specificare regole per ogni singolo elemento.<br>
+                        Cosa succcede alle proprietà che non abbiamo assegnato.
+                        <br>
+                        Alcune vengono impostate dal browser con dei valori di default.
+                        <br>
+                        Altre proprietà vengono invece ereditate.
+                        Per esempio se noi impostassimo la proprietà color ad un article, tutti i tag
+                        discendenti avrebbero color con lo stesso valore a meno che una regola non specifichi 
+                        altrimenti.
+                        <br>
+                        Gli attributi riguardanti lo stile del testo vengono ereditati, gli attributi 
+                        che vanno a modificare la struttura dei blocchi non vengono ereditati, quindi se impostiamo padding , border
+                        o margin ad un elemento i suoi discendenti non erediteranno queste proprietà.
+                        <br>
+                        Per le proprietà è possibile specificare esplicitamente di ereditare la proprietà dal blocco padre, 
+                        a prescindere dal tipo di proprietà , usando come valore <code>inherit</code> che va a
+                        dire al browser di assegnare lo stesso valore della proprietà del padre.
+                        <br>
+                        è possibile effettuare il contrario cioè dire al browser di non ereditare il valore ma usare
+                        il valore di default scrivendo il valore <code>initial</code>.
+                    </p>
+                    <section>
+                        <header>
+                            <h4>Cascade</h4>
+                        </header>
+                        <p>
+                            Cascade è l'algoritmo con cui CSS determina la versione corretta dell'assegnamento di una proprietà in presenza
+                            di più regole che definiscono la stessa proprietà.
+                        </p>
+                        <p>
+                            Partiamo dal caso più facile in caso esiste solo una regola che definisce il valore di una proprietà allora
+                            quella regola definisce il valore della proprietà.
+                        </p>
+                        <p>
+                            Esistono 3 tipi di CSS quelli definiti dal browser, quelli definiti dall'autore della pagina e i fogli di stile
+                            dell'utente(una persona può impostare delle regole css per sovrascrivere il comportamento normale della pagina),utile per esempio
+                            in caso di problemi con la vista per impostare colori con costrato elevato o font più grandi e facili da leggere.
+                        </p>
+                        <p>
+                            Ogni regola vista prima ad ora prima del ";" può avere una scritta !important per definire che la regola 
+                            ha importanza superiore ad una regola senza !important.
+                            <br>
+                        </p>
+                        <p>
+                            In caso più regole vadano a modificare una certa proprietà vince quella che appare prima nella sequente lista
+                        </p>
+                            <ul>
+                                <li>!important definita dall'utente</li>
+                                <li>!important definita dallo scrittore della pagina</li>
+                                <li>!important del browser</li>
+                                <li>regola normale definita dall'autore della pagina</li>
+                                <li>regola definita dall'utente</li>
+                                <li>regola definita dal browser</li>
+                            </ul>
+                        <p>
+                            In caso di parità viene prediletta la regola più specifica fra quelle in pareggio.
+                        </p>
+                        <p>
+                            Per specificità di una regola si intende quanto il selettore specifichi l'elemento a cui deve applicare la regola,
+                            Possiamo pensare all'id come al codice fiscale(non pensando ai rari casi di uguale codice fiscale), alla classe come
+                            alla classe come se fosse il nome e al selettore di tag come ad una caratteristica come l'altezza di una persona.
+                            In caso di selettore singolo avremo che id è un selettore più stringente di class e del tag, quindi avremo che è il più specifico.
+                            <br>
+                            In ordine avremo : id -> classe(o pseudo-classe)-> tag (oppure ::before o ::after).   
+                            <br>
+                            In caso una delle due regole specifichi più id dell'altra allora risulta più specifica,altrimenti si ha un pareggio.
+                            In caso di pareggio si contano il numero di classi di entrambi, se una delle due regole ha più classi allora è più specifica, 
+                            se anche in questo caso si ha un pareggio si contano i tag (e ::before,::after) e chi ne ha di più è la regola più specifica , in caso 
+                            di pareggio ulteriore l'ultima regola nel documento tra le due o più in parità è quella più specifica.
+                            <br>
+                            La regola più specifica decide il valore della proprietà.
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <a id="mediaQuery"></a>
+                    <header>
+                        <h3>
+                            Media Query
+                        </h3>
+                    </header>
+                    <p>
+                        Media Query è l'ultimo argomento che tratteremo per le interfacce adattive.
+                        <br>
+                        Per rendere una pagina web accessibile da qualsiasi dispositvo e creare un interfaccia
+                        accattivante che si adatta ad ogni ambiente è importante che la pagina possa cambiare il
+                        suo layout in relazione alle dimensioni della pagina o a varie altre condizioni riguardo al dispositivo su
+                        cui la pagina viene visualizzata.
+                    </p>
+                    <p>
+                        Mettiamo qui un esempio di utilizzo di media query per modificare la forma di una pagina a seconda 
+                        della dimensione del browser.(esempio tratto da <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_website"> questa pagina</a> ).
+                    </p>
+                    <div id="example">
+                        
+                          
+                          <!-- Navigation Bar -->
+                          <div class="navbar">
+                            <a href="#">Link</a>
+                            <a href="#">Link</a>
+                            <a href="#">Link</a>
+                            <a href="#">Link</a>
+                          </div>
+                          
+                    </div>
+                    <p>
+                        Se siamo su dispositivo mobile o rimpiccioliamo abbastanza il browser vedremo che i link cambieranno il loro posizionamento.
+                        Media query è una tecnica introdotta in CSS3 che permette di applicare una o più regole ponendo una condizione
+                        sul dispositivo usato.
+                        <br>
+                        Parlando solo di dispositivi con uno schermo tratteremo solo le media query della forma
+                        <code>@media only screen and</code> lista di condizioni <code>{</code> regole da applicare se le condizioni sono vere <code>}</code>.
+                        <br>
+                        Come condizioni consideriamo solo limiti di larghezza dello schermo, usiamo un valore per esempio 768px per discriminare 
+                        schermi mobile e schermi di pc desktop e laptop.
+                        <br>
+                        Affinchè le regole abbiano effetto solo su schermi con larghezza minore di 768px che considereremo mobile useremo la seguente media query<br>
+                        <code>#media only screen and(max-width:768px){<br>
+                        </code>Lista di regole CSS <br>
+                        <code>
+                        }
+                        </code>
+                        <br>
+                        Per regole CSS solo per dispositivi desktop al posto di max useremo min, per il resto la sintassi è uguale.
+                        Per altre condizioni su cui effettuare query guardare la seguente <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp">pagina</a>.
+                    </p>
+                </section>
+                <section>
+                    <a id="values"></a>
+                    <header>
+                        <h3>
+                            Valori delle proprietà
+                        </h3>
+                    </header>
+                    <p>
+                        Abbiamo parlato di molti valori nella guida, i pixel, i valori relativi i colori.
+                        Dei valori già trattati qui faremo una breve legenda
+                    </p>
+                    <p>
+                        Colori : rgba(r,g,b,a), il colore è rappresentato scomposto nelle sue componenti di rosso, verde, blu e di trasparenza,
+                        i valori r,g,b possono andare da 0 a 255, il valore di trasparenza a può andare da 0(trasparente) a 1(opaco);
+                    </p>
+                    <p>
+                        Dimensioni :
+                        <ul>
+                            <li>pixel</li>
+                            <li>relative alle dimensioni del font del browser em,rem</li>
+                            <li>relative alle dimensioni della finestra del browser vw,vh</li>
+                            <li>la minore e la maggiore delle dimensioni della finestra del browser vmin,vmax</li>
+                        </ul>
+                    </p>
+                    <section>
+                        <header>
+                            <h4>
+                                Le variabili
+                            </h4>
+                        </header>
+                        <p>In un file css è possibile che sia necessario usare uno stesso colore o una stessa dimensioni più volte è sicuramente
+                        possibile scrivere il colore o la dimensione ogni volta che ci serve nel documento, però quando ci capiterà di dover cambiare
+                        colore alla pagina e dovremo modificare centinaia di regole in cui il colore è usato, il lavoro diventerà complesso e ripetitivo e 
+                        causerà molti problemi , per esempio se un ";" venisse dimenticato da qualche parte una regola potrebbe non funzionare più andando a invalidare
+                        il contenuto e il layout della pagina.Per poter utilizzare un valore ripetute volte è buon pratica inserirlo in una variabile, una variabile è 
+                        praticamente un contenitore con al suo interno un valore, lo imposti una volta e usi la variabile infinite volte e adesso in caso
+                        di cambio di colore basterà modificare solo la variabile e tutte le regole che usano le variabili verranno modificate.
+                        </p>
+                        <img src="./images/CSSvariables.png"/>
+                        <p>
+                            Qui mostriamo un esempio di variabili css.
+                            <br>
+                            Le variabili le dichiariamo con un selettore speciale :root che permette di accederci in qualsiasi altra regole,
+                            poi ogni variabile ha la forma<code>--</code>nomevariabile<code>--:</code> valore della variabile <code>;</code>
+                        </p>
+                        <p>
+                            Per utilizzare il valore della variabile in qualsiasi altra parte del css basta usare come valore da assegnare alla proprietà
+                            <br>
+                            <code>var(</code>nome della variabile <code>);</code>
+                            <br>
+                        </p>
+                    </section>
+                    <section>
+                        <header>
+                            <h4>
+                                Le funzioni
+                            </h4>
+                        </header>
+                        <p>
+                            Fino ad ora abbiamo visto come valori per le proprietà solo valori fissi e le variabili,  come possiamo però fare operazioni 
+                            tra valori o ricavare valori del tag all'interno della regola CSS.
+                            <br>
+                            Notiamo come il tema siano valori tra cui ha senso fare operazioni, quindi avremo a che fare con dimensioni ma non coi colori.
+                        </p>
+                        <p>
+                            CSS ci permette di usare diverse operazioni tra dimensioni tramite la funzione <code>calc</code>, all'interno di questa funzione
+                            si possono inserire operazione tra dimensioni con operatori + - *(moltiplicazione) /(divisione).
+                            <br>
+                            Considriamo inoltre che gli operandi non devono essere necessariamente espressi nella stessa unità posso sommare 2em con 5vw, il browser
+                            convertirà i valori in pixel e farà la somma.
+                            <br>
+                            La sintassi è la seguente 
+                            <br>
+                            <code>calc(</code> somme sottrazioni moltiplicazioni divisioni <code>);</code>
+                            <br>
+                            La somma e la sottrazione possono essere comodi per esempio per spostare un elemento noto di quanto debba essere spostato rispetto ad un elemento
+                            e quanto è largo questo elemento, sommandoli avremo il valore da assegnare alla proprietà left.
+                        </p>
+                        <p>
+                            è possibile rappresentare <span style="background-image: linear-gradient(180deg, red, yellow, blue);">un gradiente di colore di sfondo</span>
+                            Assegnando alla proprietà background-image la funzione linear-gradient, la sintassi di questa funzione è la seguente
+                            <br>
+                            <code>linear-gradient(</code> angolo in gradi<code>deg,</code>lista di colori separati da virgole <code>);</code>
+                            <br>
+                            Il gradiente mostrato di esempio usava <code>background-image: linear-gradient(180deg, red, yellow, blue);</code>
+                            <br>
+                            Esiste anche un gradiente differente <span style="background-image: radial-gradient( red, yellow, blue);"> radiale</span>
+                            La sintassi è simile anzichè essere linear-gradient è <code>radial-gradient(red,yellow,blue);</code>.<br>
+                            Esistono le versioni in cui se lo sfondo è di dimensioni adatte ripete il gradiente , per esntrambi i tipi si ottiene semplicemente
+                            ponendo <code>repeat-</code> all'inizio del nome della funzione. Una descrizione più approfondita dei gradienti può essere guardata <a href="https://www.w3schools.com/cssref/css_functions.asp">qui</a>.
+                        </p>
+                    </section>
                 </section>
             </article>
         </div>
