@@ -305,11 +305,12 @@
                     </section>
                 </section>
                 <section>
-                    <a id="properies1"></a>
+                    <a id="properties1"></a>
                     <header>
                         <h3>
                             Un primo sguardo alle proprietà
                         </h3>
+                    </header>
                         <p>
                             Vediamo ora la seconda parte di una regola css.
                             La sezione di proprietà è un elenco di attributi che si possono assegnare ad uno o più elementi
@@ -319,7 +320,7 @@
                             La sintassi del corpo della regola è la seguente
                             <br>
                             <code>
-                                { </code> Lista di proprietà da assegnare <code> }
+                                { </code> Lista di proprietà  <code> }
                             </code>
                             <br>
                             La lista di proprietà è un elenco di elementi della seguente forma
@@ -340,9 +341,370 @@
                                 &nbsp&nbsp&nbsp&nbspfont-size:20px;<br>
                                 }<br>
                             </code>
-                            Possiamo notare che andiamo a capo ad ogni proprietà questo ci aiuta a leggere ogni singola proprietà.
-                            Vediamo cosa facciamo in questa regola, selezioniamo un elemento con id spanExample 
+                            Possiamo notare che andiamo a capo ad ogni proprietà questo ci aiuta a leggere ogni singola proprietà. Non 
+                            si è obbligati ad andare a capo, ma sicuramente aiuta la leggibilità e a trovare gli errori più velocemente.
+                            Vediamo cosa facciamo in questa regola, selezioniamo un elemento con id spanExample.
+                            Di questo scegliamo la proprietà color che indica il colore del testo e assegniamo il valore red, notiamo infatti il testo 
+                            rosso, la seconda proprietà è border-style che indica il contorno del blocco span (vediamo effettivamente che la forma di un
+                            tag span è un blocco rettangolare che può essere spezzato quando va a capo), scegliamo come valore dotted cioè il bordo a punti.
+                            Scegliamo poi una dimensione del font con font-size e scegliamo come dimensione del font 20px.
                         </p>
+                        <p>
+                            Vediamo adesso qualche esempio di valore che sarà approfondito <a href="#values">qui</a>.
+                            <br>
+                            Per i font , le dimensioni dei blocchi e spostamento di elementi si possono usare dimensioni in pixel quindi un numero con
+                            px scritto dopo. Per esempio 13px , 27 px.
+                            <br>
+                            Per i colori ci sono diversi valori possibili , noi useremo due dei vari modi di specificare i colori,
+                            i colori che si possono inserire usando il loro nome, quindi red, green , yellow <a href="https://www.w3schools.com/cssref/css_colors.asp">etc</a>. 
+                            <br>
+                            L'altro modo che useremo per indicare i colori ci permette di essere più specifici indicando le varie componenti di un colore la sintassi è :
+                            <br>
+                            <code>rgba(r,g,b,a)</code> 
+                            <br>
+                            Dove r , g e b sono indicano le componeti di colori primari rosso , verde e blu e possono avere valori tra 0 e 255,
+                            a indica l'opacità del colore 0 per traparente , 1 per opaco e 0.5 per una via di mezzo.
+                            Se in un documento css su visual studio code scriviamo rgba e usiamo l'auto completamento e all'interno sostiuiamo il contenuto con 
+                            0,0,0,0 e poi ci posizioniamo tra le parentesi tonde col mouse, uscirà fuori una piccola finestra da cui si può selezionare il colore manualmente.
+                        </p>
+                        <p>
+                            Vediamo ora le principali proprietà che useremo.
+                            <ul>
+                                <li>Colore dello sfondo <code>background-color</code> può assumere come valore qualsiasi colore </li>
+                                <li>Immagine di sfondo <code>background-image</code> per definire che immagine usare per sfondo<br>
+                                    si scrive url("url dell'immagine") per esempio("./images/background1.png")</li>
+                                <li>Dimensione dello sfondo <code>background-size</code> I valori possibili sono </li>
+                                <ul>
+                                    <li><code>larghezza altezza</code> per esempio 10px 20px; indica un immagine larga 10pixel e alta 20pixel </li>
+                                    <li><code>larghezza</code>per esempio 10px; indica che l'immagine è larga 10px e l'altezza viene calcolata per mantenere le proporzioni dell'immagine</li>
+                                    <li><code>cover</code> l'immagine viene adattata alla dimensione del blocco</li>
+                                    <li><code>percentuale percentuale</code>le dimensioni dell'immagine relative al contenitore.Se il tag che ha come sfondo l'immagine 
+                                    è grande 100px X 100px usando 50% 25%; avremmo un immagine di sfondo larga 50px e alta 25px</li>
+                                    <li><code>percentuale</code>la larghezza è relativa al contenitore l'altezza è calcolata per mantenere le proporzioni dell'immagine
+                                         (comodo se il blocco e l'immagini hanno proporzioni diverse)</li>
+                                </ul>
+                                <li>Posizione dello sfondo <code>background-position</code> può assumere valori come 
+                                    left top, center center, right bottom</li>
+                                <li>
+                                    Posizione relativa dello sfondo <code>background-attachment</code>:
+                                    <ul>
+                                        <li><code>fixed</code> l'immagine non si muove con lo scroll dello schermo</li>
+                                        <li><code>local</code> l'immagine si muove con lo scroll</li>
+                                    </ul>
+                                </li>
+                                <li>Larghezza di un bordo <code>border-width</code> valori in px</li>
+                                <li>Stile del bordo<code>border-style</code> <span style="border-width:2px;border-style:dotted"> esempio con border-width:2px;border-style:dotted</span>
+                                    <ul>
+                                        
+                                        <li><code>dotted</code> <span style="border-style: dotted;">esempio</span></li>
+                                        <li><code>dashed</code> <span style="border-style: dashed;">esempio</span></li>
+                                        <li><code>solid</code> <span style="border-style: solid ;">esempio</span></li>
+                                        <li><code>groove</code> <span style="border-style: groove;">esempio</span></li>
+                                        <li><code>double</code> <span style="border-style: double;">esempio</span></li>
+                                        <li><code>ridge</code> <span style="border-style: ridge;">esempio</span></li>
+                                        <li><code>inset</code> <span style="border-style: inset;">esempio</span></li>
+                                        <li><code>outset</code> <span style="border-style: outset;">esempio</span></li>
+                                    </ul>
+                                </li>
+                                <li>Colore del bordo<code>border-color</code> accetta un colore <span style="border-color: red;border-style: solid;">esempio con border-color:red;boder-style:solid;</span></li>
+                                <li>Bordi arrotondati <code>border-radius</code> accetta dimensioni in px <span style="border-radius:10px;border-style: solid;">esempio con border-radius:10px;boder-style:solid;</span> </li>
+                                <li>Non consigliato.Cursore mouse personalizzato<code>cursor</code> può avere una lista di file immagine(più piccoli di 32px X 32px) preferibilmente in formato .cur<br>
+                                    <code id="customcursor">url(percorso file1.cur) ,url(percorso file2.cur), auto</code>
+                                </li>
+                                <li>Raramente utile.Direzione del testo<code>direction</code>può avere i valori <code>ltr</code> o <code>rtl</code>
+                                    <br> ltr sta per left to right, rtl sta per right to left.
+                                </li>
+                                <li>Forzare un posizionamento di un elemento <code>float</code>
+                                    <br><span class="block" style="float:right;color:red;"> esempio di float:right</span> Gli elementi successivi occupano lo spazio intorno all'elemento;
+                                    <br>Se vogliamo che gli elementi successivi vadano dopo l'elemento con float usiamo<code>clear</code> con valori left oppure right oppure both,
+                                    Questo praticamente dice al browser di ignorare i float:left,float:right o entrambi da quel momento.
+                                    Si può usare la pseudo classe ::after per assegnare il float e toglierlo subito dopo
+                                     <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss_class-clear">esempio</a>
+                                    <br>
+                                </li>
+                                <li>Font-family del testo <code>font-family</code><span style="font-family: sans-serif;"> esempio in sans-serif</span><br>
+                                    La lista di font utilizzabili direttamente senza altri accorgimenti che non vedremo possono essere trovati <a href="https://www.w3schools.com/cssref/playit.asp?filename=playcss_font-family">qui</a>.
+                                </li>
+                                <li>Dimensione dei caratteri <code>font-size</code><span style="font-size:19px;"> esempio con font-size:15px;</span></li>
+                                <li>Stile del testo <code>font-style</code> Valori possibili:
+                                    <ul>
+                                        <li><code>italic</code><span style="font-style: italic;"> esempio</span></li>
+                                        <li><code>oblique</code><span style="font-style: oblique;"> esempio</span></li>
+                                    </ul>
+                                </li>
+                                <li>Peso del font <code>font-weight</code> Valori possibili:
+                                    <ul>
+                                        <li><code>lighter</code><span style="font-weight: lighter;"> esempio</span></li>
+                                        <li><code>normal</code><span style="font-weight: normal;"> esempio</span></li>
+                                        <li><code>bold</code><span style="font-weight: bold;"> esempio</span></li>
+                                        <li><code>bolder</code><span style="font-weight: bolder;"> esempio</span></li>
+                                    </ul>
+                                </li>
+                                <li>Allineamenteo del testo <code>text-align</code> può avere i valori
+                                    <ul>
+                                        <li><div style="width:40vw;text-align: left;border:1px solid;"><code >left</code></div></li>
+                                        <li><div style="width:40vw;text-align: right;border:1px solid;"><code>right</code></div></li>
+                                        <li><div style="width:40vw;text-align: justify;border:1px solid;"><code>justify</code></div></li>
+                                        <li><div style="width:40vw;text-align: center;border:1px solid;"><code>center</code></div></li>
+                                    </ul>
+                                </li>
+                                <li>Ombra del testo <code>text-shadow</code> Il valore da assegnarli è
+                                     <code>spostamentoorizzontale spostamentoverticale colore </code>
+                                     dove gli spostamenti sono in px e il colore può essere qualsiasi colore
+                                     <br>
+                                     <span style="text-shadow: 12px 12px red">esempio con text-shadow: 12px 12px red</span>
+                                     <br>
+                                     <br>
+                                     Normalmente andrebbe usato un colore con trasparenza maggiore per l'ombra. Ma causando spesso problemi agli occhi ho preferito
+                                     usare un colore opaco e spostare molto l'ombra.
+                                </li>
+                                <li>Altezza di un blocco <code>height</code> accetta altezze in px o una percentuale(relativa al blocco che lo contiene)</li>
+                                <li>Larghezza di un blocco <code>width</code> uguale a height</li>
+                                <li>Altezza minima(massima) del blocco <code>min-height</code>(max-height) dimensione in pixel </li>
+                                <li>Larghezza minima(massima) del blocco <code>min-width</code>(max-width) dimensione in pixel </li>
+                                <li>Gestione contenuto che sfora dal blocco<code>overflow</code> usare overflow:auto; per far apparire una sparra 
+                                    per poter scorrere il contenuto senza far sforare il contenuto dal blocco.
+                                </li>
+                                <li>Rendere lo scroll della pagina(quando si clicca un link) più lento <code>scroll-behavior: smooth;</code></li>
+                                
+                            </ul>
+                        </p>
+                        <p>
+                            Per continuare l'analisi delle proprietà ci serve capire come funziona il sistema a blocchi del css.
+                            Nell'html noi definiziamo un tag e il suo conenuto. Ai fini della presentazione ad ogni blocco possiamo associare 
+                            delle cornici al contenuto, per ora abbiamo visto il border che è una delle cornici , il border è impostato a 0px dal browser
+                            se non è specificato. Gli altri hanno valori definiti dal browser se non sovrascritti nel css.
+                            Questo è un esempio di componente del browser che rende diverso l'aspetto di una pagina da un browser all'altro in presenza di solo
+                            html. 
+                        </p>
+                        <img src="./images/css-box.gif" alt="immagine box system">
+                        <p>
+                            Le dimensioni di padding e margin servono per posizionare i blocchi e i bordi dei blocchi nella pagina.
+                            Alcuni sviluppatori per decidere manualmente i padding e margin quando necessari pongono all'inizio di un file css
+                            la regola <br> <code>
+                            *:not(ul):not(ol){ <br>
+                            &nbsp&nbsp&nbsp&nbspmargin:0px; <br>
+                            &nbsp&nbsp&nbsp&nbsppadding:0px; <br>
+                            }
+                            <br>
+                            </code>
+                            Che pone a tutti gli elemnti che non siano liste il margine e il padding a 0.
+                            <br>
+                            Guardiamo ora attributi che ci possono servire:
+                        </p>
+                        
+                            <ul>
+                                <li>Dimensionamento di width,height <code>box-sizing</code> indica relativamente a che box sono da calcolare width e height
+                                     <code>border-box</code> se si vuole considerare contenuto, margine e padding, <code>content-box</code> se si vuole calcolare
+                                     solo relativamente al contenuto
+                                </li>
+                                <li>
+                                    Dimensioni margin in pixel <code>margin-</code> seguito dal lato che si vuole modificare (top,left,bottom,right), dimensioni specificate in pixel.
+                                </li>
+                                <li>
+                                    Dimensioni padding in pixel <code>padding-</code> come margin qui sopra (top,left,bottom,right)
+                                </li>
+                            </ul>
+                            <p>
+                            Oltre a questi abbiamo dei tag per definire il posizionamento dei blocchi, è possibile posizionare blocchi in modo
+                            relativo e in modo assoluto. La proprietà da usare è <code>position</code> con i possibili valori che vedremo <code>relative</code>
+                             e <code>absolute</code>. Se viene usata questa proprietà è possibile usare 2 proprietà per posizionare il tag:
+                            </p>
+                             <ul>
+                                <li><code>Left</code> questa proprietà indica di quanti pixel dev'essere spostato a sinistra un elemento.
+                                In caso position sia absolute, questo sarà lo spostamento rispetto al bordo sinistro del browser, nel caso
+                                relative invece viene considerato come lo spostamento rispetto a dove sarebbe stato posizionato senza una proprietà position
+                                </li>
+                                <li><code>Top</code> funziona nello stesso modo di left solo che gli spostamenti sono in verticale verso il basso</li>
+                            </ul>
+                        <p>
+                            Esiste un'altro possibile valore di position che è <code>position:sticky</code> viene usato per creare quelle sbarre superiori nei siti Che
+                            inizialmente si spostano con la pagina ma poi rimangono fisse in cima alla pagina. Noi non trattiamo il tema, 
+                            <a href="https://www.w3schools.com/cssref/tryit.asp?filename=trycss_position_sticky">qui</a> si può trovare un esempio
+                            del codice per ottenere questo risultato.
+
+                        </p>
+                    
+                </section>
+                <section>
+                    <a id="properties2"></a>
+                    <header>
+                        <h3>
+                            Uno sguardo più approfondito alle proprietà
+                        </h3>
+                    </header>
+                    <p>
+                        Fino ad ora abbiamo osservato diverse proprietà e valori che queste possono assumere. Ci saremo resi conto che molte
+                        di queste proprietà danno un comportamento fisso e per esempio se in un componente che è strutturato a tabella
+                        dovessimo aggiungere un nuovo componente potremo trovarci a dover modificare tutto il css relativo al posizionamento, 
+                        se cambiassimo schermo le misure calcolate in pixel potrebbero non essere adatte, soprattutto per la portabilità su dispositivi mobile.
+                        In questo capitolo affronteremo le proprietà che ci permettono di risolvere parzialmente questi problemi e affronteremo anche
+                        le basi delle trasformazioni degli elementi al cambiare delle loro pseudo classi.
+                    </p>
+                    <section>
+                        <header>
+                            <h4>Dimensioni relative</h4>
+                        </header>
+                        <p>
+                            Ovunque possa essere usato una dimensione in pixel è possibile usare le dimensioni relative, possiamo immaginare che il browser
+                            in presenza di una dimensione relativa sappia fare la traduzione automatica in pixel.
+                            Esistono diversi tipi di dimensioni relative in CSS:
+                        </p>
+                        <ul>
+                            <li>Dimensione relativa al font attuale: unità di misura <code>em</code><br>
+                                Usa la dimensione attuale del font fornita dal browser, 2em per esempio significa 2 volte il font che avrebbe messo
+                                il browser <code><span style="font-size: 2em;"> esempio font 2 em</span></code>
+                            </li>
+                            <li>Dimensione relativa al font della radice del documento: unità di misura <code>rem</code><br>
+                                Usa la dimensione attuale del font fornita dal browser, 2rem per esempio significa 2 volte il font che avrebbe messo
+                                il browser per un testo nel body non incluso in alcun tag <code><span style="font-size: 2rem;"> esempio font 2 rem</span></code>
+                            </li>
+                            <li>Dimensione relativa alla larghezza attuale del browser <code>vw</code><br>
+                                Può avere valori tra 0 e 100 indica una parcentuale della larghezza della finestra del browser.
+                                <br>
+                                Se indichiamo 2vh come dimensione del font significa che la scritta avrà un font tale da essere grande il 
+                                2 percento dell'altezza della finestra;
+                                <br>
+                                Suscettibile al ridimensionamento della finestra del browser.
+                                <br>
+                                <code><span style="font-size: 2vw;"> esempio font 2 vw</span></code>
+                            </li>
+                            <li>Dimensione relativa all'altezza attuale del browser <code>vw</code><br>
+                                Può avere valori maggiori di 0 indica una parcentuale dell'altezza della finestra del browser.
+                                <br> 
+                                Suscettibile al ridimensionamento della finestra del browser.
+                                <br>
+                                <code><span style="font-size: 2vh;"> esempio font 2 vh</span></code>
+                            </li>
+                            <li>Dimensione relativa alla minore tra altezza e larghezza del browser<code>vmin</code>
+                                <code><span style="font-size: 2vmin;"> esempio font 2 vmin</span></code>
+                            </li>
+                            <li>Dimensione relativa alla maggiore tra altezza e larghezza del browser<code>vmax</code>
+                                <code><span style="font-size: 2vmax;"> esempio font 2 vmax</span></code>
+                            </li>
+                        </ul>
+                        <p>
+                            Ora proviamo a ridimensionare il browser , vedremo che gli esempi delle ultime 4 misure relative cambiano mentre i primi due non cambiano.
+                            <br>
+                            Se invece cambiamo lo zoom della pagina(non lo consiglio ora perchè per il tanto testo la pagina zoomata sposta l'utente) vedremo che cambieranno i primi 2 ma non gli ultimi 4.
+                            <br>
+                            Ora consideriamo in cosa usare le prime 2 unità relative in cosa usare le altre 4.
+                            <br>
+                            Un testo quando un utente modifica lo zoom dovrebbe subire gli effetti dello zoom che spesso è usato per mancanza di leggibilità.
+                            è quindi importante usare come misure em o rem per le dimensioni dei testi. 
+                            Le altre 4 vengono usate per fissare un layout dei componenti della pagina, per esempio una sbarra laterale larga sempre il 20% dello schermo avrà
+                            width:20vw;. è importante usare bene le unità di misura relative per creare interfacce reattive alle variazioni del browser.
+                        </p>
+                    </section>
+
+                    <section>
+                        <header>
+                            <h4>Flex box</h4>
+                        </header>
+                        <p>
+                            Per poter parlare di flex, che possiamo definire uno strumento del CSS per creare tabelle che si adattano agli schermi ,
+                            dobbiamo prima vedere una proprietà <code>display</code> di CSS che viene usata per definire come l'elemento dev'essere
+                            mostrato a schermo. Noi vediamo solo 4 dei possibili valori che questa proprietà può assumere.
+                            <br><code>inline</code> Il tag non viene posizionato a capo rispetto al tag precedente.
+                            <br><code>block</code> Il tag viene messo a capo e occupa l'intera larghezza del documento se non specificato altrimenti.
+                            <br>Non da approfondire <code>contents</code> Il tag in sparisce dal flusso del documento e il suo contenuto diventa contenuto del tag padre.
+                            <br><code>flex</code> Il tag diventa un contenitore flessibile.
+                            <br>
+                            In questo capitolo ci concentreremo parlando del caso display:flex;
+                        </p>
+                        <p>
+                            Una volta definitio un blocco con display:flex dobbiamo indicare la direzione in cui vogliamo che gli elementi vengano posizionati
+                            con la proprietà <code>flex-direction</code> che può assumere i valori <code></code>row,row-reverse,column,column-reverse </code>che permetteranno di posizionare
+                            gli elementi interni rispettivamente da sinistra a destra, da destra a sinistra, dall'alto in basso, dal basso in alto.
+                            <br>
+                            Un'altra proprietà importante è <code>flex-wrap</code> che definisce il comportamento in caso il contenitore diventi meno largo del contenuto
+                            i valori principalmente usati sono <code>wrap</code> che mantiene il direzionamento degli elementi(row per esempio) e nel caso di flex direction row 
+                            li porta alla riga successiva.
+                            <br>
+                            In presenza di un contenitore flex i tag che ne subiscono l'effetto sono solo i figli e non tutti i discendenti.
+                            <br>
+                            Vediamo in particolare quali proprietà dei tag figli di un tag con display:flex possono avere,queste proprietà funzionano quando gli elementi non sforano
+                            in caso sforino il comportamento cambia:
+                            <br>
+                            <ul>
+                                <li><code>flex-basis</code> accetta una misura in pixel ed indica la dimensione del blocco relativamente alla flex-direction<br>
+                                    Se la direzione è orizzontale(row,row-reverse) allora flex-basis indica la larghezza dell'elemento, in caso contrario l'altezza.
+                                </li>
+                                <li><code>flex-grow</code> Indica in caso di presenza di spazio quanto più largo/alto sarà l'elemento rispetto agli altri elementi
+                                    flex-grow:2; indica che l'elemento sarà largo il doppio degli altri(se il padre ha flex-direction-row).
+                                </li>
+                                <li><code>flex-shrink</code> Indica in caso di presenza di spazio quanto più stretto/basso sarà l'elemento rispetto agli altri elementi
+                                    flex-shrink:2; indica che l'elemento sarà largo il doppio degli altri(se il padre ha flex-direction-row).
+                                </li>    
+                                <li><code>justify-content</code> Indica come vengono giustificati gli elementi all'interno del contenitore.
+                                    <br>Può avere i seguenti valori :
+                                    <ul>
+                                        <li><code>flex-start</code> Gli elementi vengono posizionati dall'estremo di partenza della flex box. Dipende dalla proprietà
+                                            flex-direction. In caso fosse row, sarebbe l'angolo in alto a sinistra, in caso fosse row-reverse sarebbe l'angolo in alto a destra.
+                                        </li>
+                                        <li><code>flex-end</code> Come flex-start ma la partenza è la coordinata opposta rispetto al contenitore nella direzione di flex</li>
+                                        <li><code>center</code> Posiziona gli elementi in modo che siano centrati rispetto al contenitore che li contiene
+                                            relativamente alla direzione di flex.
+                                        </li>
+                                        <li><code>space-between</code> Posiziona gli elementi in modo che siano equidistanti tra loro nella direzione di flex.</li>
+                                        <li><code>space-around</code>P osiziona gli elementi in modo che siano equidistanti tra loro nella direzione di flex e siano
+                                            equidistanti anche rispetto ai bordi della flex-box.
+                                        </li>
+                                    </ul>
+                                </li>                            
+                            </ul>
+                            
+                        </p>
+                    </section>
+                    <section>
+                        <header>
+                            <h4>Trasformazioni con pseudo selettori</h4>
+                        </header>
+                        <p>
+                            Fino ad ora abbiamo visto come modificare una pagina reagendo al ridimensionamento e allo zoom per mantenere la pagina
+                            più adattiva possibile.
+                            <br>
+                            Però come possiamo modificare la visualizzazione di un elemento al variare del comportamento dell'utente.
+                            Il metodo più semplice senza usare codice è creare regole CSS , una per l'elemento con le caratteristiche normali,
+                            si aggiungono poi regole per lo stesso elemento ma con l'aggiunta della pseudo classe.
+                            <br>
+                            <span class="sizeChange">Testo che si ingrandisce</span>
+                            <br>
+                            <span class="sizeChange timeDelay">Testo che si ingrandisce lentamente</span>
+                            <br>
+                            Le regole usate sono
+                            <br>
+                            <img src="./images/rules.png" alt="">
+                            <br>
+                            L'attributo usato per avere una transizione tra due stati è <code>transition</code>
+                             il valore assegnato a questo parametro sono il nome del parametro che viene modificato(dalla regola con :hover in questo caso)
+                             e il tempo in secondi che indica quanto dura la transizione.
+                             Il pprimo testo non avendo la classe timeDelay effettua la transizione in modo immediato.
+                            è possibile specificare più transizioni separandole con la virgola, per esempio in caso avessimo regole che modificano sia font-size che larghezza(width)di un elemento
+                            potremo scrivere una transizione regola come <code>transition: width 2s, font-size 5s;</code> così facendo la larghezza cambierebbe in 2 secondi 
+                            e la dimensione del font in 5 secondi.
+                            <br>
+                            Si può utilizzare la proprietà <code>transition-delay</code> con un valore in secondi per indicare un ritardo con cui parte la transizione.
+                            <br>
+                        </p>
+                        <p>
+                            Oltre alle transizioni esistono anche le trasformazioni.
+                            <br>
+                            Queste indicano transformazioni geometriche di un tag rispetto alla pagina, possono essere molto complesse e possono essere rallentate
+                            usando il parametro transition.
+                            <br>
+                            Le trasformazioni possibili per esempio sono rotazioni del blocco rispetto agli assi x , y e z.
+                            <br>
+                            Per una guida rapida si consiglia di vedere questa <a href="https://www.w3schools.com/cssref/css3_pr_transform.asp">pagina</a>.
+                        </p>
+                    </section>
+                </section>
+                <section>
+                    <a id="inheritance"></a>
+                    <header>
+                        <h3>
+                            Cosa si intende per ereditarietà
+                        </h3>
                     </header>
                 </section>
             </article>

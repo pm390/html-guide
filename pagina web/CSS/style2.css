@@ -10,18 +10,20 @@ code{
 body > footer{
    margin-top: 3vh;
 }
- 
+ *{
+  scroll-behavior: smooth;
+ }
 :root {
   --side-bar-color--: rgba(0,0,0,0.8);
   --anchor-in-nav-color-- :#818181;
   --anchor-in-nav-hover--:rgba(0, 120, 255, 0.7);
   --nav-width--:25vw;
-  --scrollbarwidth--:min(2vw,2vh);
+  --scrollbarwidth--:2vmin;
   --scrollbarcolor--:rgba(44, 43, 43, 0.8);
   --scrollbarhandlecolor--:rgba(129, 216, 208,1);
   --scrollbarhovercolor--:rgba(129,216,208,0.7);
-  --scrollradius--:min(2vw,2vh);
-  --listoffset--:min(11.5vh,11.5vw);
+  --scrollradius--:2vmin;
+  --listoffset--:11.5vmin;
 }
  
 div,article,section,p {
@@ -69,7 +71,7 @@ p{
   text-align: justify;
   width:80%;
   margin-left: 10%;
-  margin-top: max(1vh,1vw);
+  margin-top: 1vmax;
   
 }
 /* scrollbar*/
@@ -107,10 +109,34 @@ header{
 ul,ol{
   margin-left:var(--listoffset--);
   text-align: justify;
+  width:80%;
+}
+li{
+  padding-top: 0.7vh;
 }
 
 #spanExample{   
   color:red;
   border-style :dotted;
   font-size:20px;
+}
+#customcursor{
+  padding-top: 5px;
+  cursor:url(../Cursor/cur1.png), auto;
+}
+
+@-ms-viewport{
+  width: device-width;
+}
+
+.sizeChange{
+  font-size: 1em;
+}
+
+.sizeChange:hover{
+  font-size: 3em;
+}
+
+.timeDelay{
+  transition: font-size 5s;
 }
