@@ -877,13 +877,21 @@
                             Qui mostriamo un esempio di variabili css.
                             <br>
                             Le variabili le dichiariamo con un selettore speciale :root che permette di accederci in qualsiasi altra regole,
-                            poi ogni variabile ha la forma<code>--</code>nomevariabile<code>--:</code> valore della variabile <code>;</code>
+                            poi ogni variabile ha la forma<code>--</code>elenco di caratteri senza spazio<code>:</code> valore della variabile <code>;</code>
+                            <br>
+                            Per esempio --bg-color:rgba(0,0,0,1) è una variabile con nome --bg-color con valore il colore rgba(0,0,0,1).
                         </p>
                         <p>
                             Per utilizzare il valore della variabile in qualsiasi altra parte del css basta usare come valore da assegnare alla proprietà
                             <br>
                             <code>var(</code>nome della variabile <code>);</code>
                             <br>
+                            Per esempio 
+                            <code>
+                                <br>p{
+                                <br>&nbsb&nbsp&nbsp&nbspbackground-color: var(--bg-color);
+                                <br>}
+                            </code>
                         </p>
                     </section>
                     <section>
